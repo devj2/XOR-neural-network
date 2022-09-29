@@ -58,7 +58,6 @@ class NN:
         num_examples = len(X)
         
         for epoch in range(1, self.epochs+1):
-            print(f'Epoch: {epoch}')
             S1, A1, S2, A2 = self.forward_propagation(X)
             derivW1, derivb1, derivW2, derivB2 = self.backward_propagation(X, Y, A1, A2, num_examples)
             self.update_parameters(derivW1, derivb1, derivW2, derivB2)
